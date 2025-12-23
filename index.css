@@ -2,7 +2,8 @@ body {
   overflow-x: hidden;
 }
 
-/* Dynamic backgrounds */
+/*Dynamic backgrounds */
+
 .sunny {
   background: linear-gradient(to bottom right, #fde68a, #fbbf24);
 }
