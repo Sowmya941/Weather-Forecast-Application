@@ -1,0 +1,28 @@
+body {
+  overflow-x: hidden;
+}
+
+/* Dynamic backgrounds */
+.sunny {
+  background: linear-gradient(to bottom right, #fde68a, #fbbf24);
+}
+
+.rainy {
+  background: linear-gradient(to bottom right, #9ca3af, #4b5563);
+}
+
+.cloudy {
+  background: linear-gradient(to bottom right, #d1d5db, #9ca3af);
+}
+#weatherIcon {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+#errorMsg {
+  transition: all 0.3s ease;
+}

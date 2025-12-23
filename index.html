@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Forecast Application</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body id="appBody" class="min-h-screen bg-gradient-to-br from-sky-200 to-blue-300">
+
+  <!-- Header -->
+  <header class="max-w-6xl mx-auto px-6 py-6">
+    <h1 class="text-3xl font-bold text-gray-800">
+      Weather Forecast Application
+    </h1>
+    <p class="text-gray-600 mt-1">
+      Search weather by city or use your current location
+    </p>
+  </header>
+
+  <!-- Main Card -->
+  <main class="max-w-6xl mx-auto px-6 pb-12">
+    <div class="bg-white rounded-2xl shadow-xl p-6">
+
+      <!-- 🔹 SEARCH BAR (PROFESSIONAL TOOLBAR) -->
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+
+        <!-- Left: Search -->
+        <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+          <input
+            id="cityInput"
+            type="text"
+            placeholder="Enter city name"
+            class="w-full sm:w-64 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+
+          <button
+            id="searchBtn"
+            class="bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition"
+          >
+            Search
+          </button>
+
+          <button
+            id="locationBtn"
+            class="bg-green-600 text-white px-5 py-2 rounded-md hover:bg-green-700 transition"
+          >
+            Use My Location
+          </button>
+        </div>
+
+        <!-- Right: Recent Searches (DESKTOP ONLY ALIGN RIGHT) -->
+        <div id="recentWrapper" class="hidden">
+          <select
+            id="recentCities"
+            class="px-4 py-2 border rounded-md text-sm focus:ring-2 focus:ring-blue-400"
+          >
+            <option value="">Recent Searches</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Error -->
+      <p id="errorMsg" class="hidden mt-4 text-center text-red-600 font-medium"></p>
+
+      <!-- WEATHER CARD -->
+      <section id="weatherCard" class="hidden mt-10">
+
+        <!-- Top Weather Info -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+
+          <!-- Left -->
+          <div>
+            <h2 id="cityName" class="text-3xl font-semibold text-gray-800 mb-2"></h2>
+
+            <div class="flex items-center gap-4">
+              <img id="weatherIcon" class="w-20 h-20" />
+              <div>
+                <p id="temperature" class="text-4xl font-bold text-gray-800"></p>
+                <button id="unitToggle" class="text-blue-600 underline text-sm mt-1">
+                  Switch to °F
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right -->
+          <div class="grid grid-cols-3 gap-4 text-gray-700 text-sm">
+            <p id="humidity"></p>
+            <p id="wind"></p>
+            <p id="condition"></p>
+          </div>
+        </div>
+
+        <!-- Alert -->
+        <p id="alertMsg" class="hidden mt-4 text-red-600 font-semibold"></p>
+
+        <!-- 5 Day Forecast -->
+        <div id="forecastSection" class="hidden mt-12">
+          <h3 class="text-xl font-semibold mb-6">5-Day Forecast</h3>
+
+          <div
+            id="forecastContainer"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
+          ></div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
