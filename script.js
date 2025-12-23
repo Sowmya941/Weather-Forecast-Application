@@ -1,5 +1,4 @@
 /* ================= CONFIG ================= */
-// 🔴 Replace with YOUR real OpenWeather API key
 const API_KEY = "e58e0d72df39dfe5f00ac3b7ee07a3f3";
 
 /* ================= DOM ELEMENTS ================= */
